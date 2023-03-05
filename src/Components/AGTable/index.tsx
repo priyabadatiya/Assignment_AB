@@ -1,12 +1,10 @@
 import { AgGridReact } from "ag-grid-react";
 
-import ProdSelect from "./ProdSelectComp";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { CellValueChangedEvent, ValueGetterParams } from "ag-grid-community";
-import { Checkbox, Select, } from "@pankod/refine-antd";
-const { Option } = Select;
+import { Checkbox, } from "@pankod/refine-antd";
 const SampleCellRenderer = (props: any) => {
     return <>{props.value} +</>;
 };
@@ -29,7 +27,6 @@ const defaultColDef = {
 
 const frameworkComponents = {
     sampleCellRenderer: SampleCellRenderer,
-    prodSelect: ProdSelect,
     selectCellRenderer: SelectCellRenderer
 
 };
