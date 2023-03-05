@@ -6,7 +6,7 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 import { CellValueChangedEvent, ValueGetterParams } from "ag-grid-community";
 import { Checkbox, } from "@pankod/refine-antd";
 const SampleCellRenderer = (props: any) => {
-    return <>{props.value} +</>;
+    return <>{props.value} </>;
 };
 function handleChange(value: any) {
     console.log(`Selected: ${value}`);
