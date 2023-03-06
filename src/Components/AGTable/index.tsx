@@ -82,7 +82,6 @@ export default function AGTable({ rowData = [
                 defaultColDef={defaultColDef}
                 frameworkComponents={frameworkComponents}
                 onCellValueChanged={cellValueChanged}
-
             />
         </div>
     );
