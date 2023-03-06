@@ -4,7 +4,7 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 import { CellValueChangedEvent, ValueGetterParams } from "ag-grid-community";
-import { Checkbox, } from "@pankod/refine-antd";
+import { Checkbox } from "@pankod/refine-antd";
 const SampleCellRenderer = (props: any) => {
     return <>{props.value} </>;
 };
@@ -52,24 +52,25 @@ export default function AGTable({ rowData = [
         editable: false,
         width: 100,
         cellRenderer: "selectCellRenderer",
+        rowDrag: true
     },
 
     {
         field: "mrp",
         cellRenderer: "sampleCellRenderer",
         editable: true,
-        width: 100
+        width: 100,
     },
     {
         field: "qty",
         editable: true,
-        width: 70
+        width: 70,
     },
     {
         field: "amount",
         editable: false,
         width: 110,
-        valueGetter: "data.qty * data.mrp"
+        valueGetter: "data.qty * data.mrp",
     }
 ] }) {
     return (
@@ -77,6 +78,7 @@ export default function AGTable({ rowData = [
             <AgGridReact
                 columnDefs={columnDefs}
                 rowData={rowData}
+                rowDragManaged={true}
                 defaultColDef={defaultColDef}
                 frameworkComponents={frameworkComponents}
                 onCellValueChanged={cellValueChanged}
